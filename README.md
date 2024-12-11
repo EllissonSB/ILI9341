@@ -4,28 +4,28 @@ Este projeto é uma implementação de controle para o display ILI9341 utilizand
 
 ## Estrutura do Projeto
 .
-├── Core/
-│   ├── Inc/
-│   │   ├── main.h
-│   │   ├── stm32f4xx_hal_conf.h
-│   │   ├── stm32f4xx_it.h
-│   │   ├── ILI9341.h
-│   │   ├── ILI9341_GFX.h
-│   │   └── 5x5_font.h
+├── Core/<br>
+│   ├── Inc/<br>
+│   │   ├── main.h<br>
+│   │   ├── stm32f4xx_hal_conf.h<br>
+│   │   ├── stm32f4xx_it.h<br>
+│   │   ├── ILI9341.h<br>
+│   │   ├── ILI9341_GFX.h<br>
+│   │   └── 5x5_font.h<br>
 │   ├── Src/
-│   │   ├── main.c
-│   │   ├── ILI9341.c
-│   │   ├── ILI9341_GFX.c
-│   │   └── ...
+<br>│   │   ├── main.c
+<br>│   │   ├── ILI9341.c
+<br>│   │   ├── ILI9341_GFX.c
+<br>│   │   └── ...
 ├── Drivers/
-│   ├── CMSIS/
-│   └── STM32F4xx_HAL_Driver/
+<br>│   ├── CMSIS/
+<br>│   └── STM32F4xx_HAL_Driver/<br>
 ├── Debug/
-│   ├── Core/
-│   └── ...
-├── DISPLAY.ioc
-├── README.md
-└── ...
+<br>│   ├── Core/
+<br>│   └── ...
+<br>├── DISPLAY.ioc
+<br>├── README.md
+<br>└── ...
 
 
 ## Arquivos Principais
