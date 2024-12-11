@@ -3,7 +3,30 @@
 Este projeto é uma implementação de controle para o display ILI9341 utilizando um microcontrolador STM32F407VETx. O código inclui funções para inicialização do display, envio de comandos e dados via SPI, e funções gráficas para desenhar formas e texto na tela.
 
 ## Estrutura do Projeto
-. ├── Core/ │ ├── Inc/ │ │ ├── main.h │ │ ├── stm32f4xx_hal_conf.h │ │ ├── stm32f4xx_it.h │ │ ├── ILI9341.h │ │ ├── ILI9341_GFX.h │ │ └── 5x5_font.h │ ├── Src/ │ │ ├── main.c │ │ ├── ILI9341.c │ │ ├── ILI9341_GFX.c │ │ └── ... ├── Drivers/ │ ├── CMSIS/ │ └── STM32F4xx_HAL_Driver/ ├── Debug/ │ ├── Core/ │ └── ... ├── DISPLAY.ioc ├── README.md └── ...
+.
+├── Core/
+│   ├── Inc/
+│   │   ├── main.h
+│   │   ├── stm32f4xx_hal_conf.h
+│   │   ├── stm32f4xx_it.h
+│   │   ├── ILI9341.h
+│   │   ├── ILI9341_GFX.h
+│   │   └── 5x5_font.h
+│   ├── Src/
+│   │   ├── main.c
+│   │   ├── ILI9341.c
+│   │   ├── ILI9341_GFX.c
+│   │   └── ...
+├── Drivers/
+│   ├── CMSIS/
+│   └── STM32F4xx_HAL_Driver/
+├── Debug/
+│   ├── Core/
+│   └── ...
+├── DISPLAY.ioc
+├── README.md
+└── ...
+
 
 ## Arquivos Principais
 
