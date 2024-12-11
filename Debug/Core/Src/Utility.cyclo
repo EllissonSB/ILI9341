@@ -1,0 +1,17 @@
+../Core/Src/Utility.c:6:6:Utility_Init	1
+../Core/Src/Utility.c:14:6:Configure_Clock	4
+../Core/Src/Utility.c:61:6:TIM2_Setup	1
+../Core/Src/Utility.c:72:6:Delay_us	2
+../Core/Src/Utility.c:80:6:Delay_ms	2
+../Core/Src/Utility.c:91:6:GPIO_Clock_Enable	1
+../Core/Src/Utility.c:98:6:GPIO_Pin_Mode	1
+../Core/Src/Utility.c:106:6:GPIO_Output_Mode	1
+../Core/Src/Utility.c:114:6:GPIO_Write_Pin	2
+../Core/Src/Utility.c:124:6:GPIO_Toggle_Pin	1
+../Core/Src/Utility.c:131:6:GPIO_Write_Port	1
+../Core/Src/Utility.c:138:6:GPIO_Resistor_Enable	1
+../Core/Src/Utility.c:146:9:GPIO_Read_Pin	2
+../Core/Src/Utility.c:155:10:GPIO_Read_Port	1
+../Core/Src/Utility.c:165:6:USART1_Init	1
+../Core/Src/Utility.c:187:5:__io_putchar	2
+../Core/Src/Utility.c:213:10:Random_Number	3
