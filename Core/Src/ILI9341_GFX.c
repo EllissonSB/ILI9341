@@ -9,6 +9,17 @@
 
 
 /*Draw hollow circle at X,Y location with specified radius and colour. X and Y represent circles center */
+/**
+ * @brief Draws a hollow circle on the ILI9341 display.
+ * 
+ * This function uses the Bresenham's circle algorithm to draw a hollow circle
+ * with the specified radius and color at the given coordinates (X, Y).
+ * 
+ * @param X The X coordinate of the center of the circle.
+ * @param Y The Y coordinate of the center of the circle.
+ * @param Radius The radius of the circle.
+ * @param Colour The color of the circle.
+ */
 void ILI9341_Draw_Hollow_Circle(uint16_t X, uint16_t Y, uint16_t Radius, uint16_t Colour)
 {
 	int x = Radius-1;
@@ -45,6 +56,17 @@ void ILI9341_Draw_Hollow_Circle(uint16_t X, uint16_t Y, uint16_t Radius, uint16_
 
 
 /*Draw filled circle at X,Y location with specified radius and colour. X and Y represent circles center */
+/**
+ * @brief  Draws a filled circle on the ILI9341 display.
+ * @param  X: The X coordinate of the center of the circle.
+ * @param  Y: The Y coordinate of the center of the circle.
+ * @param  Radius: The radius of the circle.
+ * @param  Colour: The color of the circle.
+ * @retval None
+ * @note   This implementation is not optimized for performance and may be slow.
+ *         Future improvements can be made by referring to:
+ *         https://stackoverflow.com/questions/1201200/fast-algorithm-for-drawing-filled-circles
+ */
 void ILI9341_Draw_Filled_Circle(uint16_t X, uint16_t Y, uint16_t Radius, uint16_t Colour)
 {
 
@@ -82,6 +104,20 @@ void ILI9341_Draw_Filled_Circle(uint16_t X, uint16_t Y, uint16_t Radius, uint16_
 }
 
 /*Draw a hollow rectangle between positions X0,Y0 and X1,Y1 with specified colour*/
+/**
+ * @brief  Draws a hollow rectangle on the ILI9341 display using specified coordinates and color.
+ * 
+ * This function draws a hollow rectangle by drawing horizontal and vertical lines between the specified coordinates.
+ * 
+ * @param  X0: The starting x-coordinate of the rectangle.
+ * @param  Y0: The starting y-coordinate of the rectangle.
+ * @param  X1: The ending x-coordinate of the rectangle.
+ * @param  Y1: The ending y-coordinate of the rectangle.
+ * @param  Colour: The color of the rectangle.
+ * 
+ * @note   The function calculates the lengths of the sides and draws the rectangle accordingly.
+ *         It also handles cases where the coordinates might be specified in reverse order.
+ */
 void ILI9341_Draw_Hollow_Rectangle_Coord(uint16_t X0, uint16_t Y0, uint16_t X1, uint16_t Y1, uint16_t Colour)
 {
 	uint16_t 	X_length = 0;
@@ -132,6 +168,19 @@ void ILI9341_Draw_Hollow_Rectangle_Coord(uint16_t X0, uint16_t Y0, uint16_t X1, 
 }
 
 /*Draw a filled rectangle between positions X0,Y0 and X1,Y1 with specified colour*/
+/**
+ * @brief  Draw a filled rectangle on the ILI9341 display using coordinates.
+ * @param  X0: Starting X coordinate.
+ * @param  Y0: Starting Y coordinate.
+ * @param  X1: Ending X coordinate.
+ * @param  Y1: Ending Y coordinate.
+ * @param  Colour: Colour of the rectangle.
+ * @retval None
+ *
+ * This function calculates the width and height of the rectangle based on the provided coordinates.
+ * It handles cases where the coordinates might be provided in reverse order (i.e., X1 < X0 or Y1 < Y0).
+ * The rectangle is then drawn using the ILI9341_Draw_Rectangle function.
+ */
 void ILI9341_Draw_Filled_Rectangle_Coord(uint16_t X0, uint16_t Y0, uint16_t X1, uint16_t Y1, uint16_t Colour)
 {
 	uint16_t 	X_length = 0;
@@ -180,6 +229,16 @@ void ILI9341_Draw_Filled_Rectangle_Coord(uint16_t X0, uint16_t Y0, uint16_t X1, 
 
 /*Draws a character (fonts imported from fonts.h) at X,Y location with specified font colour, size and Background colour*/
 /*See fonts.h implementation of font on what is required for changing to a different font when switching fonts libraries*/
+/**
+ * @brief  Draw a character on the ILI9341 display.
+ * @param  Character: The character to be drawn.
+ * @param  X: The X coordinate of the top-left corner of the character.
+ * @param  Y: The Y coordinate of the top-left corner of the character.
+ * @param  Colour: The color of the character.
+ * @param  Size: The size multiplier for the character.
+ * @param  Background_Colour: The background color of the character.
+ * @retval None
+ */
 void ILI9341_Draw_Char(char Character, uint8_t X, uint8_t Y, uint16_t Colour, uint16_t Size, uint16_t Background_Colour)
 {
 		uint8_t 	function_char;
@@ -219,6 +278,21 @@ void ILI9341_Draw_Char(char Character, uint8_t X, uint8_t Y, uint16_t Colour, ui
 
 /*Draws an array of characters (fonts imported from fonts.h) at X,Y location with specified font colour, size and Background colour*/
 /*See fonts.h implementation of font on what is required for changing to a different font when switching fonts libraries*/
+/**
+ * @brief Draws a text string on the ILI9341 display.
+ * 
+ * This function draws a text string starting at the specified (X, Y) coordinates
+ * with the given text color, size, and background color. Each character in the 
+ * string is drawn sequentially, and the X coordinate is incremented by the width 
+ * of the character multiplied by the size for each character.
+ * 
+ * @param Text Pointer to the null-terminated string to be drawn.
+ * @param X The X coordinate where the text drawing starts.
+ * @param Y The Y coordinate where the text drawing starts.
+ * @param Colour The color of the text.
+ * @param Size The size multiplier for the text.
+ * @param Background_Colour The background color of the text.
+ */
 void ILI9341_Draw_Text(const char* Text, uint8_t X, uint8_t Y, uint16_t Colour, uint16_t Size, uint16_t Background_Colour)
 {
     while (*Text) {
@@ -230,6 +304,29 @@ void ILI9341_Draw_Text(const char* Text, uint8_t X, uint8_t Y, uint16_t Colour, 
 /*Draws a full screen picture from flash. Image converted from RGB .jpeg/other to C array using online converter*/
 //USING CONVERTER: http://www.digole.com/tools/PicturetoC_Hex_converter.php
 //65K colour (2Bytes / Pixel)
+/**
+ * @brief Draws an image on the ILI9341 display with the specified orientation.
+ * 
+ * This function sets the rotation and address of the ILI9341 display based on the given orientation,
+ * and then transmits the image data to the display using SPI.
+ * 
+ * @param Image_Array Pointer to the image data array.
+ * @param Orientation The orientation of the image on the display. 
+ *                    Possible values are:
+ *                    - SCREEN_HORIZONTAL_1
+ *                    - SCREEN_HORIZONTAL_2
+ *                    - SCREEN_VERTICAL_1
+ *                    - SCREEN_VERTICAL_2
+ * 
+ * The function performs the following steps:
+ * 1. Sets the display rotation based on the orientation.
+ * 2. Sets the address window for the entire screen.
+ * 3. Selects the display by setting the DC and CHIP_SELECT pins.
+ * 4. Transmits the image data in chunks of BURST_MAX_SIZE using SPI.
+ * 5. Deselects the display by resetting the CHIP_SELECT pin.
+ * 
+ * Note: The image data array should contain pixel data in the format expected by the ILI9341 display.
+ */
 void ILI9341_Draw_Image(const char* Image_Array, uint8_t Orientation)
 {
 	if(Orientation == SCREEN_HORIZONTAL_1)

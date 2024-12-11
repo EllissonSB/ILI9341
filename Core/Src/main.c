@@ -109,29 +109,6 @@ int main(void)
   MX_RNG_Init();
   /* USER CODE BEGIN 2 */
   ILI9341_Init();
-HAL_Delay(1000);
-printf("prinfdada\n");
-	ILI9341_Fill_Screen(WHITE);
-	ILI9341_Set_Rotation(SCREEN_HORIZONTAL_2);
-	ILI9341_Draw_Text("RGB Picture", 10, 10, BLACK, 1, WHITE);
-	ILI9341_Draw_Text("ASSERT LOGO", 10, 20, BLACK, 1, WHITE);
-	HAL_Delay(2000);
-	while(1){
-		ILI9341_Draw_Image((const char*) trige1, SCREEN_HORIZONTAL_2);
-		Delay_us(250);
-		ILI9341_Draw_Image((const char*) trige2, SCREEN_HORIZONTAL_2);
-		Delay_us(250);
-		ILI9341_Draw_Image((const char*) trige3, SCREEN_HORIZONTAL_2);
-		Delay_us(250);
-	}
-//		ILI9341_Draw_Image((const char*) trige4, SCREEN_HORIZONTAL_2);
-//		HAL_Delay(25);
-
-//	}
-
-//	ILI9341_Set_Rotation(SCREEN_VERTICAL_2);
-//	HAL_Delay(10000);
-	while(1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -141,10 +118,10 @@ printf("prinfdada\n");
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	 ILI9341_Fill_Screen(WHITE);
-	  		ILI9341_Set_Rotation(SCREEN_HORIZONTAL_2);
-	  		ILI9341_Draw_Text("FPS TEST, 40 loop 2 screens", 10, 10, BLACK, 1, WHITE);
-	  		HAL_Delay(2000);
+	  ILI9341_Fill_Screen(WHITE);
+    ILI9341_Set_Rotation(SCREEN_HORIZONTAL_2);
+    ILI9341_Draw_Text("FPS TEST, 40 loop 2 screens", 10, 10, BLACK, 1, WHITE);
+    HAL_Delay(2000);
 		ILI9341_Fill_Screen(WHITE);
 		HAL_Delay(2000);
 		ILI9341_Fill_Screen(WHITE);
